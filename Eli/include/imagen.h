@@ -3,16 +3,18 @@
 
 class scene{
     private:
-    sf::Sprite _scene;
-//    float direccionY=1;
-//    float direccionX=1;
+
+    float direccionY;
+    float direccionX;
     public:
     scene();
     ~scene();
         void cmd();
         void update();
+         void reset(float);
         void setDireccionY(int);
         void setDireccionX(int);
+        void  render(sf::RenderWindow *);
         sf::Sprite& getDraw();
         sf::Sprite getSprite();
 

@@ -1,33 +1,77 @@
 #include <SFML/Graphics.hpp>
 #include "Escena.h"
 Escena::Escena(){
-     textura.loadFromFile("../images/vege.png");
-    _scene2.setTexture(textura);
+     mWindow =  new sf::RenderWindow(sf::VideoMode(800, 600), "Elizabeth ");
+       _tex_City.loadFromFile("images/ciudad1.png");
+       _tex_City.setRepeated(true);
+    _sc_City.setTexture(_tex_City);
+    _sc_City.setTextureRect(sf::IntRect(0, 0, 800, 395));
+    _sc_City.setPosition(sf::Vector2f(0, 50));
+
+     _tex_NUbe.loadFromFile("images/cieloNublado.png");
+     _tex_NUbe.setRepeated(true);
+     _sc_Nube.setTexture(_tex_NUbe);
+     _sc_Nube.setTextureRect(sf::IntRect(0, 0, 800, 395));
+    _sc_Nube.setPosition(sf::Vector2f(0, 0));
+
+    _tex_Desert.loadFromFile("images/cieloNublado.png");
+      _tex_Desert.setRepeated(true);
+     _sc_Nube.setTexture( _tex_Desert);
+     _sc_Desert.setTextureRect(sf::IntRect(0, 0, 800, 395));
+    _sc_Desert.setPosition(sf::Vector2f(0, 0));
+     run();
+     }
+void Escena::processEvent(){
+    sf::Event event;
+    while (mWindow->pollEvent(event)){
+            if (event.type == sf::Event::Closed){
+                mWindow->close();
+            }
+        }
 }
-//Escena::Escena(int _dirX, int _dirY){
-//       textura.loadFromFile("images/ciudad1.png");
-//    _scene2.setTexture(textura);
-//     _scene2.rotate(180);
-//     dirX=_dirX;
-//     dirY=_dirY;
-//     }
-void  Escena::render(sf::RenderWindow *wnd){
-    wnd->draw(_scene2);
+void Escena::run(){
+        float time;
+
+    while(mWindow->isOpen()){
+        processEvent();
+        time ++;
+
+        render(mWindow);
+        reset(time);
     }
- void Escena::reset(float speed){
-     srand(time(NULL));
-     int num= rand();
+}
+void  Escena::render(sf::RenderWindow *wnd){
+    mWindow->clear();
+    wnd->draw(_sc_Nube);
+   wnd->draw(_sc_City);
+   wnd->draw(_sc_Desert);
+    mWindow->display();
+    }
+ void Escena::reset(float time){
+     _sc_City.setTextureRect(sf::IntRect(time/28, 0, 800, 392));
+    _sc_City.setScale(1, 1);
 
-     _speed =0.01f;
-     _scene2.setPosition(num%dirX, dirY);
+     _sc_Nube.setTextureRect(sf::IntRect(time/6 , 0, 800, 395));
+    _sc_Nube.setScale(1, 1);
+
+     _sc_Desert.setTextureRect(sf::IntRect(time/6 , 0, 800, 395));
+    _sc_Desert.setScale(1, 1);
  }
+
  void Escena::update(sf::Time deltaTime){
- _scene2.move(0.0f, _speed*deltaTime.asSeconds());
-    if(_scene2.getPosition().y>600){
-        reset(_speed) ;
-    }  }
+ _sc_City.move(0.0f, _speed*deltaTime.asSeconds());
+    }
 
-sf::Sprite Escena::getDraw(){
-  return _scene2;}
-
-
+void Escena::setDireccionX(int dir){
+   dirX=dir;}
+void Escena::setDireccionY(int dir){
+   dirY=dir;}
+sf::Sprite & Escena::getDrawCity(){
+  return _sc_City;}
+Escena::~Escena(){
+ delete mWindow;}
+ sf::Sprite & Escena::getDrawNube(){
+      return _sc_Nube;
+    }sf::Sprite & Escena::getDrawDesert(){
+      return _sc_Desert;
+    }

@@ -47,12 +47,8 @@
 			<Add directory="SFML/lib" />
 		</Linker>
 		<Unit filename="include/Escena.h" />
-		<Unit filename="include/imagen.h" />
-		<Unit filename="include/juego.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/Escena.cpp" />
-		<Unit filename="src/imagen.cpp" />
-		<Unit filename="src/juego.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />

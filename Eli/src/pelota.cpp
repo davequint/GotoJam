@@ -9,22 +9,22 @@ Escena::Escena(){
         return;}
 
      _scene2.setTexture(textura);
-//     while (window.isOpen()){
-//
-//        sf::Event event;
-//        while (window.pollEvent(event)){
-//            if (event.type == sf::Event::Closed)
-//                window.close();
-//        }
+     while (window.isOpen()){
+
+        sf::Event event;
+        while (window.pollEvent(event)){
+            if (event.type == sf::Event::Closed)
+                window.close();
+        }
       _scene2.setPosition(0, 0);
-//    window.clear();
+    window.clear();
     window.draw(_scene2);
     window.display();
-//     }
-//   _esfera.setRadius(20.f);
-//   _esfera.setFillColor(sf::Color::Magenta);
-//   _esfera.setPosition(10, 10);
-//   _estado = ESTADOS_PELOTA::QUIETO;
+     }
+   _esfera.setRadius(20.f);
+   _esfera.setFillColor(sf::Color::Magenta);
+   _esfera.setPosition(10, 10);
+   _estado = ESTADOS_PELOTA::QUIETO;
 }
 
 // void pelota::cmd(){
@@ -32,25 +32,25 @@ Escena::Escena(){
 sf::Sprite Escena::getDraw(){
   return _scene2;}
 //
-////sf::CircleShape pelota::getShape(){
-////        return _esfera;}
-//
-//void pelota::update(){
-//    sf::Vector2<float> pos = _esfera.getPosition();
-//    _esfera .setPosition(pos.x + 0.5f*direccionX, pos.y + 0.5f*direccionY);
-//  if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))  pos.x  += 10;
-//
-//   if (sf::Keyboard::isKeyPressed(sf::Keyboard::A))  pos.x  -= 10;
-//
-//  if (sf::Keyboard::isKeyPressed(sf::Keyboard::W))  pos.y  -= 10;
-//
-//    if (sf::Keyboard::isKeyPressed(sf::Keyboard::F))  pos.y  += 10;
-//}
-//
-//void pelota::setDireccionY(int dir){
-//   direccionY=dir;}
-//void pelota::setDireccionX(int dir){
-//   direccionX=dir;}
+//sf::CircleShape pelota::getShape(){
+//        return _esfera;}
+
+void pelota::update(){
+    sf::Vector2<float> pos = _esfera.getPosition();
+    _esfera .setPosition(pos.x + 0.5f*direccionX, pos.y + 0.5f*direccionY);
+  if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))  pos.x  += 10;
+
+   if (sf::Keyboard::isKeyPressed(sf::Keyboard::A))  pos.x  -= 10;
+
+  if (sf::Keyboard::isKeyPressed(sf::Keyboard::W))  pos.y  -= 10;
+
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::F))  pos.y  += 10;
+}
+
+void pelota::setDireccionY(int dir){
+   direccionY=dir;}
+void pelota::setDireccionX(int dir){
+   direccionX=dir;}
 
 
 

@@ -5,11 +5,10 @@ class Escena{
     sf::RenderWindow *mWindow;
      sf::Texture _tex_NUbe;
     sf::Texture _tex_City;
-    sf::Texture _tex_Desert;
+    sf::Texture _tex_Vereda;
     sf::Sprite _sc_City;
     sf::Sprite _sc_Nube;
-    sf::Sprite _sc_Desert;
-    float _speed;
+    sf::Sprite _sc_Vereda;
     int dirY;
     int dirX;
     public:
@@ -25,7 +24,7 @@ class Escena{
         void setDireccionX(int);
         sf::Sprite &getDrawCity();
         sf::Sprite & getDrawNube();
-        sf::Sprite & getDrawDesert();
+        sf::Sprite & getDrawVereda();
         sf::Sprite getSprite();
 };
 

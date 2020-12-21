@@ -1,4 +1,7 @@
+#include<iostream>
 #include <SFML/Graphics.hpp>
+
+#include <SFML/Audio.hpp>
 #include "Player.h"
 #include "Escena .h"
 
@@ -11,13 +14,19 @@ int main()
     Player p;
     Escena bg;
     
-
-
+    sf::Music music;
+    bool loop = true;
+    music.openFromFile("Audio/GAME_M_THEME.wav");
+    music.setVolume(50);
+    music.setLoop(loop);
+    music.play();
+    
 
     float time = 0;
 
     while (window.isOpen())
     {
+        
         time++;
 
         sf::Event event;

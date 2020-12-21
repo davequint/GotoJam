@@ -5,7 +5,7 @@ Player::Player()
 {
     _estado=ESTADOS_PLAYER::STILL;
     
-    if (!_texture.loadFromFile("Textures/spritestrip.png"))
+    if (!_texture.loadFromFile("Textures/HastagMan.png"))
     {
         std::cout << "No encontro la imagen" << std::endl;
     }

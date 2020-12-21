@@ -37,14 +37,14 @@ int main()
 
 
         window.clear();
-        //DIBUJAMOS EL PERSONAJE
-        window.draw(p.drawSprite());
         // DIBUJAMOS EL FONDO
-        window.draw(p.drawSprite());
+        //window.draw(p.drawSprite());
         window.draw(bg.getDrawNube());
         window.draw(bg.getDrawCity());
         window.draw(bg.getDrawVereda());
 
+        //DIBUJAMOS EL PERSONAJE
+        window.draw(p.drawSprite());
         window.display();
     }
 

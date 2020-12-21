@@ -1,17 +1,3 @@
-﻿  Escena.cpp
-C:\Users\daveq\OneDrive\The Includer\Escena.cpp(39,48): warning C4244: 'argumento': conversión de 'float' a 'T'; posible pérdida de datos
-          with
-          [
-              T=int
-          ]
-C:\Users\daveq\OneDrive\The Includer\Escena.cpp(42,46): warning C4244: 'argumento': conversión de 'float' a 'T'; posible pérdida de datos
-          with
-          [
-              T=int
-          ]
-C:\Users\daveq\OneDrive\The Includer\Escena.cpp(45,46): warning C4244: 'argumento': conversión de 'float' a 'T'; posible pérdida de datos
-          with
-          [
-              T=int
-          ]
+﻿  Player.cpp
+C:\Users\daveq\OneDrive\The Includer\Player.cpp(56,25): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
   The Includer.vcxproj -> C:\Users\daveq\OneDrive\The Includer\x64\Debug\The Includer.exe

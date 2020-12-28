@@ -15,12 +15,13 @@ Escena::Escena() {
 	_sc_City.setPosition(sf::Vector2f(0, 180));
 
 
-	_tex_Vereda.loadFromFile("Textures/desierto.png");
+	_tex_Vereda.loadFromFile("Textures/Street.png");
 	_tex_Vereda.setRepeated(true);
 	_sc_Vereda.setTexture(_tex_Vereda);
-	_sc_Vereda.setTextureRect(sf::IntRect(0, 0, 800, 392));
+	_sc_Vereda.setTextureRect(sf::IntRect(-0, 0, 800, 395));
 	//     _sc_Vereda.setOrigin(sf::Vector2f(300/2,300/2));
-	_sc_Vereda.setPosition(sf::Vector2f(0, 835));
+	_sc_Vereda.setRotation(180);
+	_sc_Vereda.setPosition(sf::Vector2f(800, 230));
 	//run();
 }
 
@@ -36,7 +37,7 @@ void  Escena::render(sf::RenderWindow* wnd) {
 	mWindow->display();
 }
 void Escena::reset(float time) {
-	_sc_Vereda.setTextureRect(sf::IntRect(time / 6, 0, 800, 395));
+	_sc_Vereda.setTextureRect(sf::IntRect(time / -6, 0, 800, 395));
 	_sc_Vereda.setScale(1, -1);
 
 	_sc_City.setTextureRect(sf::IntRect(time / 40, 0, 800, 392));

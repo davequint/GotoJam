@@ -1,0 +1,17 @@
+﻿  Escena.cpp
+C:\Users\daveq\Documents\GitHub\GotoJam\Euge\The Includer\Escena.cpp(42,43): warning C4244: 'argumento': conversión de 'float' a 'T'; posible pérdida de datos
+          with
+          [
+              T=int
+          ]
+C:\Users\daveq\Documents\GitHub\GotoJam\Euge\The Includer\Escena.cpp(45,43): warning C4244: 'argumento': conversión de 'float' a 'T'; posible pérdida de datos
+          with
+          [
+              T=int
+          ]
+  Main.cpp
+  Obstacles.cpp
+  Player.cpp
+C:\Users\daveq\Documents\GitHub\GotoJam\Euge\The Includer\Player.cpp(58,25): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+  Generando código...
+LINK : fatal error LNK1104: no se puede abrir el archivo 'sfml-audio-d.lib'

@@ -43,6 +43,7 @@ int main()
         if (p.drawSprite().getPosition().y > 500) {
             p.still(p.drawSprite().getPosition().x, 500);
         }
+        //===================================================
         p.update(tiempo);
         bg.update(tiempo);
 
@@ -66,6 +67,7 @@ int main()
 
         //DIBUJAMOS EL PERSONAJE
         window.draw(p.drawSprite());
+        //DIBUJAMOS EL PERSONAJE
         window.draw(obs.drawSprite());
      
        

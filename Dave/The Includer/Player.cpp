@@ -3,8 +3,7 @@
 
 Player::Player()
 {
-    _estado=ESTADOS_PLAYER::STILL;
-    
+    _estado=ESTADOS_PLAYER::STILL;    
     if (!_texture.loadFromFile("Textures/HastagMan.png"))
     {
         std::cout << "No encontro la imagen" << std::endl;
@@ -13,8 +12,10 @@ Player::Player()
     _sprite.setTextureRect(sf::IntRect(0, 0, 256, 256));
     _sprite.setScale(0.5f, 0.5f);
     _sprite.setOrigin(sf::Vector2f(256 / 2, 256));
-    _sprite.setPosition(sf::Vector2f(0, 500));
+    _sprite.setPosition(sf::Vector2f(100, 500));
     _jumpVelocity = 0;
+    _tools = 0;
+
 }
 
 void Player::cmd()
@@ -38,18 +39,33 @@ void Player::update(float time)
     switch (_estado)
     {
     case STILL:
+        _sprite.setTextureRect(sf::IntRect(1542, 0, 254, 254));
         break;
     case FORWARD:
-        _sprite.move(5, 0);
-        _sprite.setTextureRect(sf::IntRect(((int)(time / 5) % 6) * 256, 0, 256, 256));
-        _sprite.setScale(0.5, 0.5);
-        _estado = ESTADOS_PLAYER::STILL;
-        break;
+        if (_sprite.getGlobalBounds().left > 650) {
+            _sprite.setTextureRect(sf::IntRect(((int)(time / 5) % 6) * 256, 0, 256, 256));
+            _sprite.setScale(0.5, 0.5);
+            _estado = ESTADOS_PLAYER::STILL;
+        }
+        else {
+            _sprite.move(5, 0);
+            _sprite.setTextureRect(sf::IntRect(((int)(time / 5) % 6) * 256, 0, 256, 256));
+            _sprite.setScale(0.5, 0.5);
+            _estado = ESTADOS_PLAYER::STILL;
+            break;
+        }
+        
     case BACKWARD:
+        if (_sprite.getGlobalBounds().left < 5) {
+            _sprite.setTextureRect(sf::IntRect(((int)(time / 5) % 6) * 256, 0, 256, 256));
+            _sprite.setScale(-0.5, 0.5);
+            _estado = ESTADOS_PLAYER::STILL;
+        }else {
         _sprite.move(-5, 0);
         _sprite.setTextureRect(sf::IntRect(((int)(time / 5) % 6) * 256, 0, 256, 256));
         _sprite.setScale(-0.5, 0.5);
         _estado = ESTADOS_PLAYER::STILL;
+        }
         break;
     case JUMP:
         _jumpVelocity -= 2;
@@ -69,6 +85,15 @@ void Player::still(float x, float y)
 sf::Sprite Player::drawSprite()
 {
     return _sprite;
+}
+
+void Player::setTools(int add)
+{
+    _tools + add;
+}
+int  Player::getTools()
+{
+    return _tools;
 }
 
 

@@ -14,6 +14,7 @@ class Player
 		sf::Texture _texture;
 		ESTADOS_PLAYER _estado;
 		int _jumpVelocity;
+		int _tools;
 
 	public:
 		Player();
@@ -21,5 +22,7 @@ class Player
 		void update(float );
 		void still(float, float);
 		sf::Sprite drawSprite();
+		void setTools(int );
+		int getTools();
 };
 

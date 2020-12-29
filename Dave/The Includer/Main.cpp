@@ -1,7 +1,6 @@
 #include<iostream>
 #include <SFML/Graphics.hpp>
-
-#include <SFML/Audio.hpp>
+//#include <SFML/Audio.hpp>
 #include "Player.h"
 #include "Escena .h"
 #include "Obstacles.h"
@@ -19,12 +18,12 @@ int main()
     Tool hammer;
 
     ///Obstacles obs;
-    sf::Music music;
+   /* sf::Music music;
     bool loop = true;
     music.openFromFile("Audio/GAME_M_THEME.wav");
     music.setVolume(50);
     music.setLoop(loop);
-    music.play();
+    music.play();*/
 
 
     float tiempo = 0;

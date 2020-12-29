@@ -1,2 +1,1 @@
-﻿  Tool.cpp
-  The Includer.vcxproj -> C:\Users\daveq\OneDrive\The Includer\x64\Debug\The Includer.exe
+﻿LINK : fatal error LNK1104: no se puede abrir el archivo 'sfml-graphics-d.lib'
